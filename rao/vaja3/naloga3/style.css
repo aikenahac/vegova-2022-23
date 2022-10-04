@@ -1,0 +1,124 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Open Sans';
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+}
+
+header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding-right: 5%;
+  padding-left: 5%;
+  border-bottom: solid 2px;
+  border-color: rgb(197, 197, 197);
+}
+
+/* Header styles */
+
+header > h1 {
+  font-weight: bolder;
+}
+
+/* New tweet section styles */
+
+publisher {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 1% 6%;
+}
+
+textarea {
+  width: 80%;
+}
+
+button {
+  border-radius: 25px;
+  border: none;
+  background-color: #1ea1f3;
+  color: white;
+  width: 120px;
+  height: 50px;
+  font-size: 15pt;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+button:hover {
+  cursor: pointer;
+  background-color: #86d1ff;
+  rotate: 360deg;
+  transition: 0.3s;
+}
+
+/* Post styles */
+postarea {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 1% 20%;
+  border-top: solid 1.5px;
+  border-bottom: solid 1.5px;
+  border-color: rgb(197, 197, 197);
+  min-height: 20vh;
+}
+
+post {
+  display: flex;
+  flex-direction: column;
+  margin-left: 2vw;
+}
+
+flexrow {
+  display: flex;
+  flex-direction: row;
+}
+
+name, username {
+  margin-right: 0.5rem;
+}
+
+name {
+  font-weight: bold;
+}
+
+username, timeposted {
+  color: #98a4a6;
+}
+
+mention {
+  color: #1ea1f3;
+}
+
+mention:hover {
+  cursor: pointer;
+  color: #86d1ff;
+  transform: skew(30deg, 20deg);;
+}
+
+.post {
+  border-radius: 50px;
+  width: 40%;
+}
+
+/* Reusable styles */
+
+.pfp {
+  border-radius: 50%;
+  width: 4vw;
+  height: 4vw;
+}
+
+separator {
+  height: 50px;
+  width: 100vw;
+  background-color: gray;
+}
