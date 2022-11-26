@@ -136,3 +136,5 @@ ALTER TABLE CD ADD FOREIGN KEY (lastnik) REFERENCES Lastnik(lid);
 -- 7.
 CREATE TABLE Owner AS 
   SELECT * FROM Lastnik;
+
+-- 8.
