@@ -87,12 +87,12 @@ void setup() {
     server.begin();
 }
 
-char buf[4];
+char tempBuf[100];
+char humBuf[100];
 
 void loop() {
-
-    humidity = dhtSensor.readHumidity();
     temperature = dhtSensor.readTemperature();
+    humidity = dhtSensor.readHumidity();
 
     Serial.print("Temperature: ");
     Serial.print(temperature);
@@ -101,10 +101,15 @@ void loop() {
     Serial.print("Humidity: ");
     Serial.println(humidity);
 
-    sprintf(buf, "%f", temperature);
+    sprintf(tempBuf, "%f", temperature);
+    sprintf(humBuf, "%f", humidity);
 
     server.on("/temp", HTTP_GET, [](AsyncWebServerRequest *req) {
-        req->send(200, "text/plain", buf);
+        req->send(200, "text/plain", tempBuf);
+    });
+
+    server.on("/hum", HTTP_GET, [](AsyncWebServerRequest *req) {
+        req->send(200, "text/plain", humBuf);
     });
 
     delay(5000);
