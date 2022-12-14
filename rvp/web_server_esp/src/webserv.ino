@@ -9,8 +9,8 @@
 #include <DHT.h>
 #include <stdio.h>
 
-const char* ssid = "A1-521A2D_RPT";
-const char* password = "xoyezo1806";
+const char* ssid = "Aiken’s iPhone";
+const char* password = "nino2567";
 
 const int led5Pin = 5;
 const int led12Pin = 12;
@@ -23,6 +23,12 @@ float humidity;
 float temperature;
 
 AsyncWebServer server(80);
+
+char state12Buf[5];
+char state5Buf[5];
+
+char tempBuf[100];
+char humBuf[100];
 
 void setup() {
     Serial.begin(115200);
@@ -68,6 +74,10 @@ void setup() {
         req->send(SPIFFS, "/script.js", "text/javascript");
     });
 
+    server.on("/style.css", HTTP_GET, [](AsyncWebServerRequest *req) {
+        req->send(SPIFFS, "/style.css", "text/css");
+    });
+
     server.on("/5/on", HTTP_POST, [](AsyncWebServerRequest *req) {
         digitalWrite(led5Pin, HIGH);
     });
@@ -84,11 +94,24 @@ void setup() {
         digitalWrite(led12Pin, LOW);
     });
 
+    server.on("/temp", HTTP_GET, [](AsyncWebServerRequest *req) {
+        req->send(200, "text/plain", tempBuf);
+    });
+
+    server.on("/hum", HTTP_GET, [](AsyncWebServerRequest *req) {
+        req->send(200, "text/plain", humBuf);
+    });
+
+    server.on("/5/state", HTTP_GET, [](AsyncWebServerRequest *req) {
+        req->send(200, "text/plain", state12Buf);
+    });
+
+    server.on("/12/state", HTTP_GET, [](AsyncWebServerRequest *req) {
+        req->send(200, "text/plain", state12Buf);
+    });
+
     server.begin();
 }
-
-char tempBuf[100];
-char humBuf[100];
 
 void loop() {
     temperature = dhtSensor.readTemperature();
@@ -104,13 +127,13 @@ void loop() {
     sprintf(tempBuf, "%f", temperature);
     sprintf(humBuf, "%f", humidity);
 
-    server.on("/temp", HTTP_GET, [](AsyncWebServerRequest *req) {
-        req->send(200, "text/plain", tempBuf);
-    });
+    Serial.println(humBuf);
 
-    server.on("/hum", HTTP_GET, [](AsyncWebServerRequest *req) {
-        req->send(200, "text/plain", humBuf);
-    });
+    int state5 = digitalRead(led5Pin);
+    int state12 = digitalRead(led12Pin);
+
+    sprintf(state5Buf, "%f", state5);
+    sprintf(state12Buf, "%f", state12);
 
     delay(5000);
 }
