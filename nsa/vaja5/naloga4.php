@@ -3,15 +3,15 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>Vaja 5 - Naloga 3</title>
+  <title>Vaja 5 - Naloga 4</title>
 </head>
 
 <body>
   <?php
   $t = array();
 
-  for ($i = 0; $i < 30; $i++) {
-    array_push($t, chr(rand(ord('A'), ord('Z'))));
+  for ($i = 0; $i < 40; $i++) {
+    array_push($t, rand(0, 255));
   }
 
   foreach ($t as $i => $v) {
@@ -19,25 +19,25 @@
   }
   echo '<br>';
 
-  echo 'Mesta črke A: ';
+  echo 'ASCII kode velikih črk so na mestih: ';
   foreach ($t as $i => $v) {
-    if ($v === 'A') {
+    if ($v >= ord('A') && $v <= ord('Z')) {
       echo "$i ";
     }
   }
   echo '<br>';
 
-  echo 'Mesta črke B: ';
+  echo 'ASCII kode malih črk so na mestih: ';
   foreach ($t as $i => $v) {
-    if ($v === 'B') {
+    if ($v >= ord('a') && $v <= ord('z')) {
       echo "$i ";
     }
   }
   echo '<br>';
 
-  echo 'Mesta črke C: ';
+  echo 'ASCII kode ostalih znakov so na mestih: ';
   foreach ($t as $i => $v) {
-    if ($v === 'C') {
+    if (!($v >= ord('A') && $v <= ord('z'))) {
       echo "$i ";
     }
   }
