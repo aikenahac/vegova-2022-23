@@ -10,7 +10,7 @@
 #include <stdio.h>
 
 const char* ssid = "Aiken’s iPhone";
-const char* password = "nino2567";
+const char* password = "makima123";
 
 const int led5Pin = 5;
 const int led12Pin = 12;
