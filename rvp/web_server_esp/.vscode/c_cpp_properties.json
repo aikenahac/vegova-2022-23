@@ -208,8 +208,6 @@
                 "/Users/aiken/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/dio_qspi/include",
                 "/Users/aiken/.platformio/packages/framework-arduinoespressif32/cores/esp32",
                 "/Users/aiken/.platformio/packages/framework-arduinoespressif32/variants/esp32",
-                "/Users/aiken/repos/vegova-2022-23/rvp/web_server_esp/.pio/libdeps/esp32dev/AsyncTCP/src",
-                "/Users/aiken/repos/vegova-2022-23/rvp/web_server_esp/.pio/libdeps/esp32dev/ESP Async WebServer/src",
                 "/Users/aiken/.platformio/packages/framework-arduinoespressif32/libraries/ArduinoOTA/src",
                 "/Users/aiken/.platformio/packages/framework-arduinoespressif32/libraries/AsyncUDP/src",
                 "/Users/aiken/.platformio/packages/framework-arduinoespressif32/libraries/BLE/src",
@@ -445,8 +443,6 @@
                     "/Users/aiken/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/dio_qspi/include",
                     "/Users/aiken/.platformio/packages/framework-arduinoespressif32/cores/esp32",
                     "/Users/aiken/.platformio/packages/framework-arduinoespressif32/variants/esp32",
-                    "/Users/aiken/repos/vegova-2022-23/rvp/web_server_esp/.pio/libdeps/esp32dev/AsyncTCP/src",
-                    "/Users/aiken/repos/vegova-2022-23/rvp/web_server_esp/.pio/libdeps/esp32dev/ESP Async WebServer/src",
                     "/Users/aiken/.platformio/packages/framework-arduinoespressif32/libraries/ArduinoOTA/src",
                     "/Users/aiken/.platformio/packages/framework-arduinoespressif32/libraries/AsyncUDP/src",
                     "/Users/aiken/.platformio/packages/framework-arduinoespressif32/libraries/BLE/src",
@@ -481,7 +477,7 @@
                 ]
             },
             "defines": [
-                "PLATFORMIO=60105",
+                "PLATFORMIO=60106",
                 "ARDUINO_ESP32_DEV",
                 "HAVE_CONFIG_H",
                 "MBEDTLS_CONFIG_FILE=\"mbedtls/esp_config.h\"",

@@ -1,28 +1,104 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>ESP32 Web Server</title>
+    <title>Aiken's Thermostat</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="icon" href="data:," />
-    <link rel="stylesheet" type="text/css" href="style.css" />
-    <script src="script.js" defer></script>
+    <link rel="stylesheet" type="text/css" href="styles/style.css" />
+    <link rel="stylesheet" type="text/css" href="styles/slider.css" />
+    <script src="scripts/script.js" defer></script>
+    <script src="scripts/slider.js" defer></script>
   </head>
   <body>
-    <h1>Aiken's Thermostat</h1>
+    <div class="info-chip">
+      <h1>Aiken's Thermostat</h1>
+    </div>
 
-    <p class="ledMan">LED 1</p>
-    <label class="switch" id="led5Switch">
-      <input type="checkbox" checked name="5" />
-      <span class="slider round"></span>
-    </label>
+    <div class="info">
+      <div class="info-chip sm">
+        <h2>Temperature</h2>
+        <p id="temp">--°C</p>
+      </div>
+      <div class="info-chip sm">
+        <h2>Humidity</h2>
+        <p id="hum">--%</p>
+      </div>
+    </div>
 
-    <p class="ledMan">LED 2</p>
-    <label class="switch" id="led12Switch">
-      <input type="checkbox" checked name="12" />
-      <span class="slider round"></span>
-    </label>
-
-    <p id="temp">Temperature:</p>
-    <p id="hum">Humidity:</p>
+    <div class="toggle-container">
+      <div>
+        <div class="flex-row relative">
+          <!-- <img
+            src="./assets/power.svg"
+            id="heater-state-icon"
+            class="header-icon kek svg-pending"
+            name="heater"
+            state="false"
+          /> -->
+          <h2>Heater</h2>
+        </div>
+        <div class="slidecontainer">
+          <label for="heater-slider" class="slider-label"
+            >Set temperature (<span id="selected-temp">--</span>&#8451;):</label
+          >
+          <input
+            type="range"
+            min="15"
+            max="30"
+            value="22"
+            class="slider"
+            id="temperature-slider"
+          />
+          <label for="heater-hyst-slider" class="slider-label"
+            >Set hysteresis (<span id="selected-hyst-temp">--</span
+            >&#8451;):</label
+          >
+          <input
+            type="range"
+            min="1"
+            max="8"
+            value="2"
+            class="slider"
+            id="temperature-hyst-slider"
+          />
+        </div>
+      </div>
+      <div>
+        <div class="flex-row relative" id="dehumidifier-loader">
+          <!-- <img
+            src="./assets/power.svg"
+            id="dehumidifier-state-icon"
+            class="header-icon kek svg-pending"
+            name="dehumidifier"
+            state="false"
+          /> -->
+          <h2>Dehumidifier</h2>
+        </div>
+        <div class="slidecontainer">
+          <label for="humidity-slider" class="slider-label"
+            >Set humidity (<span id="selected-hum">--</span>%):</label
+          >
+          <input
+            type="range"
+            min="10"
+            max="80"
+            value="50"
+            class="slider"
+            id="humidity-slider"
+          />
+          <label for="humidity-hyst-slider" class="slider-label"
+            >Set hysteresis (<span id="selected-hyst-hum">--</span>%):</label
+          >
+          <input
+            type="range"
+            min="1"
+            max="8"
+            value="2"
+            class="slider"
+            id="humidity-hyst-slider"
+          />
+        </div>
+      </div>
+    </div>
   </body>
 </html>

@@ -1,0 +1,84 @@
+html {
+  font-family: Arial, Helvetica, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background-color: #171717;
+  width: 100vw;
+  height: 100vh;
+  overflow-x: hidden;
+}
+
+* {
+  overflow-x: hidden;
+}
+
+h1,
+h2 {
+  color: #f0f0f0;
+}
+
+.title {
+  color: #f0f0f0;
+}
+
+#hum,
+#temp {
+  color: #f0f0f0;
+}
+
+.kek {
+  cursor: pointer;
+}
+
+.svg-on {
+  filter: invert(75%) sepia(70%) saturate(351%) hue-rotate(60deg)
+    brightness(104%) contrast(96%);
+}
+
+.svg-off {
+  filter: invert(40%) sepia(71%) saturate(3079%) hue-rotate(337deg)
+    brightness(107%) contrast(82%);
+}
+
+.svg-pending {
+  filter: invert(92%) sepia(36%) saturate(581%) hue-rotate(8deg) brightness(93%)
+    contrast(95%);
+}
+
+.toggle-container div,
+.toggle-container h2 {
+  margin-bottom: 10px;
+  background-color: #2a2a2a;
+  border-radius: 8px;
+  padding: 10px 30px;
+  max-width: 600px;
+}
+
+.info {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.info-chip {
+  background-color: #2a2a2a;
+  border-radius: 8px;
+  padding: 10px 30px;
+  margin-bottom: 10px;
+}
+
+.sm {
+  width: 40%;
+}
+
+flex-row {
+  display: flex;
+  align-items: center;
+}
+
+.relative {
+  position: relative;
+}
